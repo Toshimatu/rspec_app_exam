@@ -7,12 +7,13 @@ RSpec.describe 'Task', type: :system do
 
   describe 'Task一覧' do
     context '正常系' do
-      it '一覧ページにアクセスした場合、Taskが表示されること' do
+      fit '一覧ページにアクセスした場合、Taskが表示されること' do
         # TODO: ローカル変数ではなく let を使用してください
-        visit project_tasks_path(project)
-        expect(page).to have_content task.title
+        visit project_tasks_path(project, task)
+        expect(find('.task_list')).to have_content task.title
+        # expect(page).to have_content task.title
         expect(Task.count).to eq 1
-        expect(current_path).to eq project_tasks_path(project)
+        expect(current_path).to eq project_tasks_path(project, task)
       end
 
       it 'Project詳細からTask一覧ページにアクセスした場合、Taskが表示されること' do
