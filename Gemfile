@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '2.6.5'
 
 gem 'rails', '~> 5.2.3'
 gem 'sqlite3'
@@ -37,6 +37,7 @@ end
 group :test do
   gem 'capybara', '>= 2.15'
   gem 'webdrivers'
+  gem 'pry-rails'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
